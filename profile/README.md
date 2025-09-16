@@ -59,9 +59,9 @@
 
 ---
 
-## 📄 라이선스
-이 프로젝트는 **Apache License 2.0** 하에 배포됩니다.  
-자세한 내용은 [LICENSE](./LICENSE) 파일을 참고하세요.  
+**라이선스**
+이 프로젝트는 *Apache License 2.0* 하에 배포됩니다.  
+자세한 내용은 [LICENSE](https://github.com/Hi-REMS/Hi-REMS-SERVER/blob/main/LICENSE)를 참고하세요. 
 
 ---
 
