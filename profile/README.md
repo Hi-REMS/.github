@@ -39,7 +39,7 @@
 - **Frontend**: Vue.js, Vue Router, Axios  
 - **Backend**: Restful API, Node.js, Express  
 - **DBMS**: PostgreSQL, MySQL/MariaDB  
-- **Infra**: Nginx, GitHub Actions CI/CD, Docker  
+- **Infra**: Nginx, GitHub Actions CI/CD
 - **OS**: Linux (Ubuntu 20.04 LTS / Rocky Linux 9.x)  
 - **Tools**: Git, MobaXterm, Notion  
 - **Cloud**: AWS  
