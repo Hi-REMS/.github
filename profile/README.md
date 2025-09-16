@@ -1,7 +1,3 @@
-
-  <img src="https://github.com/user-attachments/assets/71fb55cb-082f-4c56-9c02-264a3c70c269" alt="Hi-REMS Logo" width="100" height="100">
-
-
 <h1>Hi-REMS</h1>
 
 <p >
