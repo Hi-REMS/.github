@@ -1,72 +1,33 @@
-<h1>Hi-REMS</h1>
+# 🌍 Hi-REMS (Hybrid Energy Remote Monitoring System)
 
-<p >
-  스마트 에너지
-  <br/>
-  에너지 모니터링과 관련 다양한 OPEN API를 활용하여, 사용자 친화적인 대시보드와 서비스를 제공합니다.
-</p>
+> **"지속 가능한 에너지를 위한 통합 원격 관제 플랫폼"**
 
-
-  🔗 <a href="https://kocome.com/hirems/frontend/#/">Hi-REMS Dashboard 바로가기</a>
-
+**Hi-REMS**는 태양광, 태양열, 지열, 풍력, 연료전지, ESS 등 이기종 신재생 에너지 설비의 데이터를 실시간으로 수집·분석하여, 최적의 에너지 효율 관리와 안정적인 설비 운영을 지원하는 통합 모니터링 솔루션입니다.
 
 ---
 
-## 🚀 주요 기능
-- **실시간 에너지 모니터링**
-   
-  - 금일 시간대별 발전량, 효율 지표, 운전 이력(IMEI 멀티 값), 설비 정보 제공  
-  - 주간/월간/연간 발전량 누계, 식수 그루, CO₂ 저감량 지표 제공  
-  - 발전량 데이터를 `.csv` 형식으로 다운로드 가능
- 
-- **환경 기여도 분석**
-  
-  - CO₂ 저감량, 나무 심기 환산 등 ESG 관점의 지표 제공
+## 🔗 Quick Access (바로가기)
 
-- **관리자 & 사용자 모드**
-  
-  - 역할 기반 접근 제어(RBAC)를 적용 
-  - 관리자는 설비/IMEI·권한·임계치·알림 정책·데이터 정정·대시보드 구성을 제어
-  - 사용자는 실시간 모니터링, 리포트(.csv) 다운로드, 알림 구독, 개인 환경설정을 이용
+프로젝트의 상세 문서와 서비스 접속 링크입니다.
 
-- **라이트 & 다크 모드**
-  
-  - 시스템 테마 자동 감지 + 수동 토글을 지원
-  - 명도 대비(AA 이상)를 준수하고, 차트/지도 색상을 테마에 맞춰 자동 최적화하며, 선호 테마는 브라우저에 저장되어 재방문 시 유지
----
-
-## 🛠️ 기술 스택
-- **Frontend**: Vue.js, Vue Router, Axios  
-- **Backend**: Restful API, Node.js, Express  
-- **DBMS**: PostgreSQL, MySQL/MariaDB  
-- **Infra**: Nginx, GitHub Actions CI/CD
-- **OS**: Linux (Ubuntu 20.04 LTS / Rocky Linux 9.x)  
-- **Tools**: Git, MobaXterm, Notion  
-- **Cloud**: AWS  
-- **IDE**: VS Code  
-
-- **반응형 웹 & Android 네이티브 래퍼**
-  
-  - 단일 코드베이스로 모바일·태블릿·데스크톱에 최적화(Responsive Web)
-  - Android는 WebView 기반의 경량 래퍼로 **스플래시 화면만** 추가해 동일 UI를 그대로 배포 가능
-  - PWA 지원: 홈 화면 설치, 기본 오프라인 캐시
----
-
-## 📖 프로젝트 목표
-- 🌱 친환경 에너지 모니터링 서비스 확산  
-- 🌍 글로벌 사용자가 쉽게 접근할 수 있는 대시보드 구축  
-
+| 구분 | 설명 | 링크 |
+| :--- | :--- | :--- |
+| **📚 Wiki** | 시스템 아키텍처, 개발 가이드, 트러블슈팅 | [**바로가기**](https://github.com/Hi-REMS/Hi-Rems-Server/wiki) |
+| **🖥️ Dashboard** | 실시간 통합 관제 대시보드 (Web) | [**바로가기**](http://kocome.com/hirems) |
+| **📡 API Docs** | 백엔드 API 명세서 (Swagger) | [**바로가기**](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/Hi-REMS/Hi-Rems-Server/refs/heads/main/swagger.yaml) |
 
 ---
 
-**라이선스**
-이 프로젝트는 *Apache License 2.0* 하에 배포됩니다.  
-자세한 내용은 [LICENSE](https://github.com/Hi-REMS/Hi-REMS-SERVER/blob/main/LICENSE)를 참고하세요
+## 🏗️ System Architecture
 
-[![License](https://img.shields.io/github/license/Hi-REMS/Hi-REMS-SERVER)](https://github.com/Hi-REMS/Hi-REMS-SERVER/blob/main/LICENSE)
+Hi-REMS 시스템은 대용량 시계열 데이터 처리와 실시간 관제를 위해 최적화된 하이브리드 아키텍처를 채택하고 있습니다.
 
----
-
-## 🏅 인증 현황
-- GS (Good Software) 인증 **준비 중**  
-  (공식 인증 심사 완료 후 업데이트 예정)
+### 🔄 Data Flow
+```mermaid
+graph LR
+    A[⚡ RTU / Sensors] -->|Hex Packet| B(TCP/IP Network)
+    B -->|Ingestion| C[🚀 Backend Server]
+    C -->|Parse & Analyze| D[(🐘 PostgreSQL \nTimescaleDB)]
+    C -.->|Sync Metadata| E[(🐬 MySQL \nLegacy Data)]
+    C -->|REST API| F[💻 Web Dashboard \nVue.js]
+    C -->|OpenAPI| G[📱 3rd Party App]
