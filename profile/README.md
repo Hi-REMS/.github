@@ -1,4 +1,4 @@
-# 🌍 Hi-REMS (Hybrid Energy Remote Monitoring System)
+# Hi-REMS (Hybrid Energy Remote Monitoring System)
 
 > **"지속 가능한 에너지를 위한 통합 원격 관제 플랫폼"**
 
