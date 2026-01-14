@@ -16,7 +16,7 @@ Hi-REMS 시스템은 대용량 시계열 데이터 처리와 실시간 관제를
 <img width="612" height="324" alt="image" src="https://github.com/user-attachments/assets/d37b8624-cec9-4acf-94d0-77b0d34f8b4a" />
 
 
-### 🔄 데이터 흐름
+### 데이터 흐름
 ```mermaid
 graph LR
     A[⚡ RTU / Sensors] -->|Hex Packet| B(TCP/IP Network)
