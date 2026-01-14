@@ -4,22 +4,6 @@
 
 **Hi-REMS**는 태양광, 태양열, 지열, 풍력, 연료전지, ESS 등 이기종 신재생 에너지 설비의 데이터를 실시간으로 수집·분석하여, 최적의 에너지 효율 관리와 안정적인 설비 운영을 지원하는 통합 모니터링 솔루션입니다.
 
----
-
-## 🔗 Quick Access (바로가기)
-
-프로젝트의 상세 문서와 서비스 접속 링크입니다.
-
-| 구분 | 설명 | 링크 |
-| :--- | :--- | :--- |
-| **📚 Wiki** | 시스템 아키텍처, 개발 가이드, 트러블슈팅 | [**바로가기**](https://github.com/Hi-REMS/Hi-Rems-Server/wiki) |
-| **🖥️ Dashboard** | 실시간 통합 관제 대시보드 (Web) | [**바로가기**](http://kocome.com/hirems) |
-| **📡 API Docs** | 백엔드 API 명세서 (Swagger) | [**바로가기**](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/Hi-REMS/Hi-Rems-Server/refs/heads/main/swagger.yaml) |
-
----
-
-## 🏗️ System Architecture
-
 Hi-REMS 시스템은 대용량 시계열 데이터 처리와 실시간 관제를 위해 최적화된 하이브리드 아키텍처를 채택하고 있습니다.
 
 ### 🔄 Data Flow
